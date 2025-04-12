@@ -1,0 +1,12 @@
+
+CREATE TABLE AUTHOR (
+  id INT PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE BOOK (
+  id INT PRIMARY KEY,
+  title VARCHAR(255),
+  author_id INT,
+  CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES AUTHOR(id)
+);
