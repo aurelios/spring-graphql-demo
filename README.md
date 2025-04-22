@@ -62,6 +62,19 @@ query {
 }
 ```
 
+### 🔍 Get a book by Title
+
+```graphql
+query {
+  bookByTitle(title:"Clean") {
+    title
+    author {
+      name
+    }
+  }
+}
+```
+
 ### ➕ Add a book
 
 ```graphql

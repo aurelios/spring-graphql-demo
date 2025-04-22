@@ -29,6 +29,11 @@ public class BookController {
         return bookRepository.findById(id).orElse(null);
     }
 
+    @QueryMapping
+    public List<Book> bookByTitle(@Argument String title) {
+        return bookRepository.findByTitleContaining(title);
+    }
+
     @MutationMapping
     public Book addBook(@Argument Integer id, @Argument String title, @Argument Integer authorId) {
         Author author = authorRepository.findById(authorId).orElse(null);
